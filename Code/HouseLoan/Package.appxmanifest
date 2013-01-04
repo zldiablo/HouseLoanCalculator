@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="10980LeZhang.2013" Publisher="CN=FF51538E-A3D1-49CE-B8CA-50502D38A329" Version="1.0.0.2" />
+  <Properties>
+    <DisplayName>房贷计算器2013</DisplayName>
+    <PublisherDisplayName>Le Zhang</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="HouseLoan.App">
+      <VisualElements DisplayName="房贷计算器2013" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="HouseLoan" ForegroundText="light" BackgroundColor="#464646">
+        <DefaultTile ShowName="allLogos" />
+        <SplashScreen Image="Assets\SplashScreen.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+</Package>
