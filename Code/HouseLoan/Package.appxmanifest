@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="10980LeZhang.2013" Publisher="CN=FF51538E-A3D1-49CE-B8CA-50502D38A329" Version="1.0.0.2" />
+  <Identity Name="10980LeZhang.2013" Publisher="CN=FF51538E-A3D1-49CE-B8CA-50502D38A329" Version="1.0.0.3" />
   <Properties>
     <DisplayName>房贷计算器2013</DisplayName>
     <PublisherDisplayName>Le Zhang</PublisherDisplayName>

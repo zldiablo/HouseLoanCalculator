@@ -18,12 +18,18 @@
         <TextBox x:Name="LoanAmount" HorizontalAlignment="Left" Margin="250,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" InputScope="Number" AcceptsReturn="True" Width="120" Height="38" MaxLength="8" Text="50"/>
         
         <TextBlock HorizontalAlignment="Left" Margin="50,200,0,0" TextWrapping="Wrap" Text="贷款期限(年)" VerticalAlignment="Top" FontSize="20"/>
-        <ComboBox x:Name="LoanYears" HorizontalAlignment="Left" Margin="250,200,0,0" VerticalAlignment="Top" Width="120">
+        <ComboBox x:Name="LoanYears" HorizontalAlignment="Left" Margin="250,200,0,0" VerticalAlignment="Top" Width="220">
             <ComboBoxItem Content="10"/>
             <ComboBoxItem Content="15"/>
             <ComboBoxItem Content="20"/>
             <ComboBoxItem Content="25"/>
             <ComboBoxItem Content="30" IsSelected="True"/>
+            <ComboBoxItem>
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="其他："/>
+                    <TextBox Name="OtherYears" Text="" Width="100" InputScope="Number"/>
+                </StackPanel>
+            </ComboBoxItem>
         </ComboBox>
        
         <TextBlock HorizontalAlignment="Left" Margin="50,270,0,0" TextWrapping="Wrap" Text="还款方式" VerticalAlignment="Top" FontSize="20"/>

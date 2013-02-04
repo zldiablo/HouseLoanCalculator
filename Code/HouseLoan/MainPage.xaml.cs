@@ -40,7 +40,12 @@ namespace HouseLoan
             ResultPanel.Children.Clear();
 
             int totalTime;
-            if (!int.TryParse(ReadSelectString(LoanYears), out totalTime))
+            if (!int.TryParse(ReadLoanYears(LoanYears), out totalTime))
+            {
+                Reset();
+                return;
+            }
+            if (totalTime < 0 || totalTime > 30)
             {
                 Reset();
                 return;
@@ -55,7 +60,7 @@ namespace HouseLoan
             }
             amount *= 10000.0;
 
-            double interest = GetInterest();
+            double interest = GetInterest(totalTime / 12);
 
             if (PayType.SelectedIndex == 0)
             {
@@ -93,12 +98,13 @@ namespace HouseLoan
             return tb;
         }
 
-        private double GetInterest()
+        private double GetInterest(int years)
         {
             double interest;
             if (LoanType.SelectedIndex == 1)
             {
-                interest = 0.045;
+                if (years > 5) { interest = 0.045; }
+                else { interest = 0.04; }
             }
             else
             {
@@ -114,7 +120,8 @@ namespace HouseLoan
                 //{
                 //    interest = 0.0725;
                 //}
-                interest = 0.0655;
+                if (years > 5) { interest = 0.0655; }
+                else { interest = 0.064; }
             }
 
             if (InterestChange.SelectedIndex == 1)
@@ -130,6 +137,20 @@ namespace HouseLoan
 
         private void Reset()
         {
+        }
+
+        private string ReadLoanYears(ComboBox box)
+        {
+            int length = box.Items.Count();
+            int selectedIndex = box.SelectedIndex;
+            if (selectedIndex < length - 1)
+            {
+                return ((ComboBoxItem)box.SelectedItem).Content.ToString();
+            }
+            else
+            {
+                return OtherYears.Text;
+            }
         }
 
         private static string ReadSelectString(ComboBox box)
